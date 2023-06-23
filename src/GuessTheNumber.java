@@ -7,6 +7,7 @@ public class GuessTheNumber {
     Random rand = new Random();
 
     private static final int NUMBER_RANGE = 101;
+    private static final String QUIT_TEXT = "quit";
     private static final String WELCOME_MSG = "--- Welcome to Guess The Number ! ---";
     private static final String QUIT_MSG = "--- Type 'quit' to end game at anytime ---";
     private static final String GUESS_MSG = "Guess a number between 0 and 100: ";
@@ -30,7 +31,7 @@ public class GuessTheNumber {
         while(!isEnded) {
             System.out.print(GUESS_MSG);
             userInput = scn.nextLine();
-            if(userInput.equals("quit")) {
+            if(userInput.equals(QUIT_TEXT)) {
                 isEnded = true;
             } else {
                 guessedNumber = Integer.parseInt(userInput);
