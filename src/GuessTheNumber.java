@@ -29,8 +29,9 @@ public class GuessTheNumber {
         System.out.println();
         isEnded = false;
 
+        // testing
+        // System.out.println(randomNumber);
         while(!isEnded) {
-            System.out.println(randomNumber);
             System.out.print(GUESS_MSG);
             userInput = scn.nextLine();
             if(userInput.equals(QUIT_TEXT)) {
