@@ -1,5 +1,5 @@
 /**
- * GuessTheNumber.java
+ * GuessTheNumberMain.java
  * Created on 23/06/2023
  * Last modified on 23/06/2023
  * No copyright
