@@ -12,6 +12,8 @@ public class GuessTheNumber {
     private static final String QUIT_MSG = "--- Type 'quit' to end game at anytime ---";
     private static final String GUESS_MSG = "Guess a number between 0 and 100: ";
     private static final String WIN_MSG = "Brilliant! You have guessed correctly!";
+    private static final String NUMBER_OF_TRIES_TO_WIN_PT_ONE_MSG = "You took ";
+    private static final String NUMBER_OF_TRIES_TO_WIN_PT_TWO_MSG = " tries!";
     private static final String HIGH_NUMBER_MSG = "Guess again! You have guessed a higher number!";
     private static final String LOW_NUMBER_MSG = "Guess again! You have guessed a lower number!";
     private static final String NEAR_NUMBER_MSG = "Close Shave! You are almost there!";
@@ -19,6 +21,7 @@ public class GuessTheNumber {
 
     private int randomNumber = rand.nextInt(NUMBER_RANGE); // range between 0 and 100
     private String userInput;
+    private int numberOfTries;
     private int guessedNumber;
     private boolean isEnded;
 
@@ -31,15 +34,19 @@ public class GuessTheNumber {
 
         // testing
         // System.out.println(randomNumber);
+
+        numberOfTries = 0;
         while(!isEnded) {
             System.out.print(GUESS_MSG);
             userInput = scn.nextLine();
             if(userInput.equals(QUIT_TEXT)) {
                 isEnded = true;
             } else {
+                numberOfTries++;
                 guessedNumber = Integer.parseInt(userInput);
                 if(guessedNumber == randomNumber) {
                     System.out.println(WIN_MSG);
+                    System.out.println(NUMBER_OF_TRIES_TO_WIN_PT_ONE_MSG + numberOfTries + NUMBER_OF_TRIES_TO_WIN_PT_TWO_MSG);
                     isEnded = true;
                 } else if(guessedNumber == randomNumber + 1 || guessedNumber == randomNumber - 1) {
                     System.out.println(NEAR_NUMBER_MSG);
