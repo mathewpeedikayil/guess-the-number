@@ -1,3 +1,15 @@
+/**
+ * GuessTheNumber.java
+ * Created on 23/06/2023
+ * Last modified on 23/06/2023
+ * No copyright
+ * This class represents the number guessing game.
+ * Version History: 1.0 - only pure code; 2.0 - comments added.
+ *
+ * @author Mathew Philip Peedikayil
+ * @version 2.0
+ */
+
 import java.util.Random;
 import java.util.Scanner;
 
