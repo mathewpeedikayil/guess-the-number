@@ -14,6 +14,7 @@ public class GuessTheNumber {
     private static final String WIN_MSG = "Brilliant! You have guessed correctly!";
     private static final String HIGH_NUMBER_MSG = "Guess again! You have guessed a higher number!";
     private static final String LOW_NUMBER_MSG = "Guess again! You have guessed a lower number!";
+    private static final String NEAR_NUMBER_MSG = "Close Shave! You are almost there!";
     private static final String THANKS_PLAYING_MSG = "Thanks for playing !";
 
     private int randomNumber = rand.nextInt(NUMBER_RANGE); // range between 0 and 100
@@ -29,6 +30,7 @@ public class GuessTheNumber {
         isEnded = false;
 
         while(!isEnded) {
+            System.out.println(randomNumber);
             System.out.print(GUESS_MSG);
             userInput = scn.nextLine();
             if(userInput.equals(QUIT_TEXT)) {
@@ -37,7 +39,10 @@ public class GuessTheNumber {
                 guessedNumber = Integer.parseInt(userInput);
                 if(guessedNumber == randomNumber) {
                     System.out.println(WIN_MSG);
-                } else if(randomNumber > guessedNumber) {
+                    isEnded = true;
+                } else if(guessedNumber == randomNumber + 1 || guessedNumber == randomNumber - 1) {
+                    System.out.println(NEAR_NUMBER_MSG);
+                } else if(guessedNumber > randomNumber) {
                     System.out.println(HIGH_NUMBER_MSG);
                 } else {
                     System.out.println(LOW_NUMBER_MSG);
